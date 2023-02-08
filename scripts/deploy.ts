@@ -1,18 +1,25 @@
 import { ethers } from "hardhat";
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
+  const name = "Omatech Token";
+  const symbol = "OMT";
+  const decimals = 8;
+  const supply = 1_000_000_000 * 10 ** decimals;
 
-  const lockedAmount = ethers.utils.parseEther("1");
+  const [signer] = await ethers.getSigners();
+  const ownerAddress = await signer.getAddress();
 
-  const Lock = await ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+  const ERC20Token = await ethers.getContractFactory("ERC20Token");
+  const erc20Token = await ERC20Token.deploy(
+    name,
+    symbol,
+    String(supply),
+    ownerAddress
+  );
 
-  await lock.deployed();
+  await erc20Token.deployed();
 
-  console.log(`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`);
+  console.log(`Contract deployed to ${erc20Token.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

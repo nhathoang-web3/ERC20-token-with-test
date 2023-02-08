@@ -2,6 +2,8 @@
 
 This project demonstrates a basic ERC20 token standard. It comes with a ERC20 token contract, a test for that contract, and a script that deploys that contract.
 
+Deployed sample: https://goerli.etherscan.io/token/0xf055bb6a78c9ef26ca9b78b945437edfe22cddf1
+
 Try running some of the following tasks:
 
 ```shell
@@ -19,3 +21,6 @@ Website: https://omatech.asia
 Linkedin: https://www.linkedin.com/in/nvnhathoang
 
 Telegram: @William_Web3
+
+Or you can create ERC20 token free at this website:
+https://dapps.omatech.asia
