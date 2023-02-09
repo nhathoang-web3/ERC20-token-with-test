@@ -14,7 +14,7 @@ npx hardhat node
 npx hardhat run scripts/deploy.ts
 ```
 
-The above sample is just a baisc token, if you have more requirements needs to do, you can hire us to develop your smart contract.
+The above sample is just a basic token, if you have more requirements needs to do, you can hire us to develop your smart contract.
 
 Website: https://omatech.asia
 
